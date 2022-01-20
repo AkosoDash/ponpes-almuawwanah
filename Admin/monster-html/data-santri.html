@@ -2,15 +2,6 @@
 <html dir="ltr" lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords"
-        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Monsterlite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Monster admin lite design, Monster admin lite dashboard bootstrap 5 dashboard template">
-    <meta name="description"
-        content="Monster Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
-    <meta name="robots" content="noindex,nofollow">
     <title>Monster Lite Template by WrapPixel</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/monster-admin-lite/" />
     <!-- Favicon icon -->
@@ -82,18 +73,7 @@
                     <!-- ============================================================== -->
                     <!-- toggle and nav items -->
                     <!-- ============================================================== -->
-                    <ul class="navbar-nav me-auto mt-md-0 ">
-                        <!-- ============================================================== -->
-                        <!-- Search -->
-                        <!-- ============================================================== -->
-
-                        <li class="nav-item hidden-sm-down">
-                            <form class="app-search ps-3">
-                                <input type="text" class="form-control" placeholder="Search for..."> <a
-                                    class="srh-btn"><i class="ti-search"></i></a>
-                            </form>
-                        </li>
-                    </ul>
+                    <ul class="navbar-nav me-auto mt-md-0 "></ul>
 
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
@@ -148,9 +128,6 @@
                                 <span class="hide-menu">Profil Pondok</span>
                             </a>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-fontawesome.html" aria-expanded="false"><i class="me-3 fa fa-font"
-                                    aria-hidden="true"></i><span class="hide-menu">Icon</span></a></li>
                         <li class="text-center p-20 upgrade-btn">
                             <a href="https://www.wrappixel.com/templates/monsteradmin/"
                                 class="btn btn-danger px-4 text-white mt-4" target="_blank"><i class="fas fa-sign-out-alt"></i> Keluar</a>
@@ -162,28 +139,144 @@
             </div>
             <!-- End Sidebar scroll-->
         </aside>
-        <!-- ============================================================== -->
-        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper  -->
-        <!-- ============================================================== -->
+
+        <!-- MODAL Delete-->
+        <div class="modal fade" id="deleteConfirmation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title fw-normal" id="deleteConfirmationLabel">Konfirmasi Hapus Data Santri</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <span class="fs-5 fw-normal">Apakah anda yakin ingin menghapus data : </span>
+                  <span class="fs-5 fw-normal">
+                      <div class="row">
+                          <div class="col-3">Nama</div>
+                          <div class="col-9">: Abimanyu Prakoso</div>
+                      </div>
+                  </span>
+                  <span class="fs-5 fw-normal">
+                    <div class="row">
+                        <div class="col-3">NISN</div>
+                        <div class="col-9">: 2131094092</div>
+                    </div>
+                </span>
+                <span class="fs-5 fw-normal">
+                    <div class="row">
+                        <div class="col-3">Angkatan</div>
+                        <div class="col-9">: 15</div>
+                    </div>
+                </span>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Batalkan</button>
+                  <button type="button" class="btn btn-danger text-light" data-bs-dismiss="modal"><i class="fas fa-trash text-light"></i> Hapus</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- MODAL Edit-->
+        <div class="modal fade" id="editSantri" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header bg-primary">
+                  <h3 class="modal-title fw-normal text-light" id="editSantriLabel">Edit Data Santri</h3>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-2 row">
+                        <label for="namaSantri" class="col-lg-3 fs-5 fw-normal col-form-label">Nama Santri</label>
+                        <div class="col-lg-9">
+                        <input type="text" class="form-control fs-5" id="namaSantri" value="Abimanyu Prakoso">
+                        </div>
+                    </div>
+                    <div class="mb-2 row">
+                        <label for="namaSantri" class="col-lg-3 fs-5 fw-normal col-form-label">NISN</label>
+                        <div class="col-lg-9">
+                        <input type="text" class="form-control fs-5" id="namaSantri" value="2131120938192">
+                        </div>
+                    </div>
+                    <div class="mb-2 row">
+                        <label for="namaSantri" class="col-lg-3 fs-5 fw-normal col-form-label">Angkatan</label>
+                        <div class="col-lg-9">
+                            <div class="input-group mb-3">
+                                <select class="form-select" id="inputGroupSelect02">
+                                  <option selected value="10">Angkatan 10</option>
+                                  <option value="11">Angkatan 11</option>
+                                  <option value="12">Angkatan 12</option>
+                                  <option value="13">Angkatan 13</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Batalkan</button>
+                  <button type="button" class="btn btn-success text-light" data-bs-dismiss="modal"><i class="fas fa-edit text-light"></i> Update</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- MODAL Tambah-->
+        <div class="modal fade" id="tambahSantri" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header bg-primary">
+                  <h3 class="modal-title fw-normal text-light" id="tambahSantriLabel">Tambah Data Santri</h3>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-2 row">
+                        <label for="namaSantri" class="col-lg-3 fs-5 fw-normal col-form-label">Nama Santri</label>
+                        <div class="col-lg-9">
+                        <input type="text" class="form-control fs-5" id="namaSantri" value="" placeholder="Masukkan nama santri">
+                        </div>
+                    </div>
+                    <div class="mb-2 row">
+                        <label for="namaSantri" class="col-lg-3 fs-5 fw-normal col-form-label">NISN</label>
+                        <div class="col-lg-9">
+                        <input type="text" class="form-control fs-5" id="namaSantri" value="" placeholder="Masukkan NISN santri">
+                        </div>
+                    </div>
+                    <div class="mb-2 row">
+                        <label for="namaSantri" class="col-lg-3 fs-5 fw-normal col-form-label">Angkatan</label>
+                        <div class="col-lg-9">
+                            <div class="input-group mb-3">
+                                <select class="form-select" id="inputGroupSelect02">
+                                  <option selected value="10">Angkatan 10</option>
+                                  <option value="11">Angkatan 11</option>
+                                  <option value="12">Angkatan 12</option>
+                                  <option value="13">Angkatan 13</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Batalkan</button>
+                  <button type="button" class="btn btn-success text-light" data-bs-dismiss="modal"><i class="fas fa-check text-light"></i> Tambahkan</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
         <div class="page-wrapper">
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
-                    <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="page-title mb-0 p-0">Daftar Pengajar</h3>
-                        <h3 class="page-title mb-0 p-0">Tahun Ajaran 2021/2022</h3>
+                    <div class="col-md-10 align-self-center">
+                        <h2 class="page-title p-0">Daftar Santri Aktif</h2>
+                        <h5 class="text-muted mt-2 fw-light">Tahun Ajaran 2021/2022</h5>
                     </div>
-                    <div class="col-md-6 col-4 align-self-center">
-                        <div class="text-end upgrade-btn">
-                            <a href="https://www.wrappixel.com/templates/monsteradmin/"
-                                class="btn btn-success d-none d-md-inline-block text-white" target="_blank">Upgrade to
-                                Pro</a>
-                        </div>
+                    <div class="col-md-2">
+                        <button href="#" class="btn btn-primary btn-md text-end ms-2 text-light" data-bs-toggle="modal" data-bs-target="#tambahSantri">
+                            <i class="fas fa-plus me-2"></i> Tambah Santri
+                        </button>
                     </div>
                 </div>
             </div>
@@ -199,8 +292,25 @@
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Basic Table</h4>
-                                <h6 class="card-subtitle">Add class <code>.table</code></h6>
+                                <h5></h5>
+                                <div class="row justify-content-between">
+                                    <div class="col-7">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="Cari data santri" aria-label="Text input with segmented dropdown button">
+                                            <button type="button" class="btn btn-primary"><i class="fas fa-search"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="col-5">
+                                        <div class="input-group mb-3">
+                                            <select class="form-select" id="inputGroupSelect02">
+                                              <option selected value="10">Angkatan 10</option>
+                                              <option value="11">Angkatan 11</option>
+                                              <option value="12">Angkatan 12</option>
+                                              <option value="13">Angkatan 13</option>
+                                            </select>
+                                          </div>
+                                    </div>
+                                </div>
                                 <div class="table-responsive">
                                     <table class="table user-table no-wrap">
                                         <thead>
@@ -216,54 +326,86 @@
                                             <tr>
                                                 <td>1</td>
                                                 <td>Abimanyu Prakoso</td>
-                                                <td>2131730098</td>
-                                                <td>27</td>
+                                                <td>391029839</td>
+                                                <td>14</td>
                                                 <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">
+                                                    <button href="#" class="btn btn-warning text-light btn-sm" data-bs-toggle="modal" data-bs-target="#editSantri">
                                                         <i class="fas fa-edit"></i> Edit
-                                                    </a>
-                                                    <a href="#" class="btn btn-danger text-light btn-sm">
+                                                    </button>
+                                                    <button href="#" class="btn btn-danger ms-2 text-light btn-sm" data-bs-toggle="modal" data-bs-target="#deleteConfirmation">
                                                         <i class="fas fa-trash"></i> Hapus
-                                                    </a>
+                                                    </button>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>2</td>
-                                                <td>Junanda Deyastusesa Maharani Noto Boto Mangun Negoro</td>
-                                                <td>2131730098</td>
-                                                <td>27</td>
+                                                <td>Junanda Deyastusesa Maharani Noto</td>
+                                                <td>481029830</td>
+                                                <td>11</td>
                                                 <td>
                                                     <a href="#" class="btn btn-warning btn-sm">
                                                         <i class="fas fa-edit"></i> Edit
                                                     </a>
-                                                    <a href="#" class="btn btn-danger text-light btn-sm">
+                                                    <button href="#" class="btn btn-danger ms-2 text-light btn-sm" data-bs-toggle="modal" data-bs-target="#deleteConfirmation">
                                                         <i class="fas fa-trash"></i> Hapus
-                                                    </a>
+                                                    </button>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>3</td>
-                                                <td>Sanghani</td>
-                                                <td>Gusikowski</td>
-                                                <td>@Govinda</td>
+                                                <td>Abimanyu Prakoso</td>
+                                                <td>391029839</td>
+                                                <td>14</td>
+                                                <td>
+                                                    <a href="#" class="btn btn-warning btn-sm">
+                                                        <i class="fas fa-edit"></i> Edit
+                                                    </a>
+                                                    <button href="#" class="btn btn-danger ms-2 text-light btn-sm" data-bs-toggle="modal" data-bs-target="#deleteConfirmation">
+                                                        <i class="fas fa-trash"></i> Hapus
+                                                    </button>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>4</td>
-                                                <td>Roshan</td>
-                                                <td>Rogahn</td>
-                                                <td>@Hritik</td>
+                                                <td>Junanda Deyastusesa Maharani Noto</td>
+                                                <td>481029830</td>
+                                                <td>11</td>
+                                                <td>
+                                                    <a href="#" class="btn btn-warning btn-sm">
+                                                        <i class="fas fa-edit"></i> Edit
+                                                    </a>
+                                                    <button href="#" class="btn btn-danger ms-2 text-light btn-sm" data-bs-toggle="modal" data-bs-target="#deleteConfirmation">
+                                                        <i class="fas fa-trash"></i> Hapus
+                                                    </button>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>5</td>
-                                                <td>Joshi</td>
-                                                <td>Hickle</td>
-                                                <td>@Maruti</td>
+                                                <td>Abimanyu Prakoso</td>
+                                                <td>391029839</td>
+                                                <td>14</td>
+                                                <td>
+                                                    <a href="#" class="btn btn-warning btn-sm">
+                                                        <i class="fas fa-edit"></i> Edit
+                                                    </a>
+                                                    <button href="#" class="btn btn-danger ms-2 text-light btn-sm" data-bs-toggle="modal" data-bs-target="#deleteConfirmation">
+                                                        <i class="fas fa-trash"></i> Hapus
+                                                    </button>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>6</td>
-                                                <td>Nigam</td>
-                                                <td>Eichmann</td>
-                                                <td>@Sonu</td>
+                                                <td>Junanda Deyastusesa Maharani Noto</td>
+                                                <td>481029830</td>
+                                                <td>11</td>
+                                                <td>
+                                                    <a href="#" class="btn btn-warning btn-sm">
+                                                        <i class="fas fa-edit"></i> Edit
+                                                    </a>
+                                                    <button href="#" class="btn btn-danger ms-2 text-light btn-sm" data-bs-toggle="modal" data-bs-target="#deleteConfirmation">
+                                                        <i class="fas fa-trash"></i> Hapus
+                                                    </button>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -272,16 +414,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-                <!-- ============================================================== -->
-                <!-- End Right sidebar -->
-                <!-- ============================================================== -->
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
